@@ -82,4 +82,19 @@ subordinate(X,Y) :- superior(Y,X).
 % Write your queries here .
 
 
+% Q1: Are there any employees that are 'female' and that work in project 'computerization' with an effort of '10' hours per week, and that have 'jennifer' as a supervisor? if so, list them.
+
+female(X),works_on(X,computerization,10),supervise(jennifer,X).
+
+% Q2. Who is the employee who makes over "40000" dollars a year and works for the "research" department?
+
+salary(X,Y),Y>40000,department(X,research).
+
+% Q3. Who is the supreme chief of this fictional company (aka the President)
+
+supervise(X,_), not(supervise(_,X)).
+
+% Who are the individuals that work on project 'productx' with an 'effort' of 20 or more hours a week?
+
+works_on(X,productx,Y), Y>=20.
 
